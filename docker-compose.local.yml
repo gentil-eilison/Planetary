@@ -1,0 +1,18 @@
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django
+    ports:
+      -'8000:8000'
+    env_file:
+      - .envs/local/.django
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:17
+    env_file:
+      - .envs/local/.postgres
+    volumes:
+      - postgres_local_data:/var/lib/postgresql/data

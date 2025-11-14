@@ -1,0 +1,13 @@
+# Docker
+compose
+.dockerignore
+
+# Environment
+.env
+.env-EXAMPLE
+
+# Git
+.gitignore
+
+# Markdown
+README.md
