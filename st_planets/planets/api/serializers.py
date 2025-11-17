@@ -1,7 +1,5 @@
 from rest_framework import serializers
 
-from st_planets.core.serializer_fields import StringListField
-
 from ..models import Climate, Planet, Terrain
 
 
@@ -26,8 +24,8 @@ class PlanetCreateSerializer(serializers.ModelSerializer):
 
 
 class PlanetReadSerializer(serializers.ModelSerializer):
-    climates = StringListField(source="get_climates_names")
-    terrains = StringListField(source="get_terrains_names")
+    climates = ClimateSerializer(many=True)
+    terrains = TerrainSerializer(many=True)
 
     class Meta:
         model = Planet
