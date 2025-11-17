@@ -51,7 +51,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
 ]
 
-LOCAL_APPS = ["st_planets.planets"]
+LOCAL_APPS = ["st_planets.planets", "st_planets.core"]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
 
