@@ -24,5 +24,6 @@ class TerrainViewSet(ModelViewSet):
 class PlanetViewSet(CreateReadSerializerMixin, ModelViewSet):
     queryset = Planet.objects.all().prefetch_related("climates", "terrains")
     permission_classes = (AllowAny,)
+    filterset_class = filters.PlanetFilterSet
     read_serializer_class = serializers.PlanetReadSerializer
     create_serializer_class = serializers.PlanetCreateSerializer

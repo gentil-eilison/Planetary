@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from st_planets.core.fields import StringListField
+from st_planets.core.serializer_fields import StringListField
 
 from ..models import Climate, Planet, Terrain
 
