@@ -7,7 +7,7 @@ from st_planets.constants import LONG_CHAR_FIELD_MAX_LENGTH
 
 class Climate(TimeStampedModel):
     name = models.CharField(
-        verbose_name=_("Name"), max_length=LONG_CHAR_FIELD_MAX_LENGTH
+        verbose_name=_("Name"), max_length=LONG_CHAR_FIELD_MAX_LENGTH, unique=True
     )
 
     def __str__(self) -> str:
