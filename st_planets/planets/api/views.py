@@ -9,14 +9,14 @@ from ..models import Climate, Planet, Terrain
 
 class ClimateViewSet(ModelViewSet):
     serializer_class = serializers.ClimateSerializer
-    queryset = Climate.objects.all().prefetch_related("planets")
+    queryset = Climate.objects.all()
     filterset_class = filters.ClimateFilterSet
     permission_classes = (AllowAny,)
 
 
 class TerrainViewSet(ModelViewSet):
     serializer_class = serializers.TerrainSerializer
-    queryset = Terrain.objects.all().prefetch_related("planets")
+    queryset = Terrain.objects.all()
     filterset_class = filters.TerrainFilterSet
     permission_classes = (AllowAny,)
 
