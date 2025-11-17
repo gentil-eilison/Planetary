@@ -20,7 +20,7 @@ class Climate(TimeStampedModel):
 
 class Terrain(TimeStampedModel):
     name = models.CharField(
-        verbose_name=_("Name"), max_length=LONG_CHAR_FIELD_MAX_LENGTH
+        verbose_name=_("Name"), max_length=LONG_CHAR_FIELD_MAX_LENGTH, unique=True
     )
 
     def __str__(self) -> str:
@@ -33,7 +33,7 @@ class Terrain(TimeStampedModel):
 
 class Planet(TimeStampedModel):
     name = models.CharField(
-        verbose_name=_("Name"), max_length=LONG_CHAR_FIELD_MAX_LENGTH
+        verbose_name=_("Name"), max_length=LONG_CHAR_FIELD_MAX_LENGTH, unique=True
     )
     population = models.PositiveBigIntegerField(verbose_name=_("Population"))
     climates = models.ManyToManyField(
