@@ -1,0 +1,12 @@
+from rest_framework.permissions import AllowAny
+from rest_framework.viewsets import ModelViewSet
+
+from st_planets.planets.api import serializers
+
+from ..models import Climate
+
+
+class ClimateViewSet(ModelViewSet):
+    serializer_class = serializers.ClimateSerializer
+    queryset = Climate.objects.all().prefetch_related("planets")
+    permission_classes = (AllowAny,)
