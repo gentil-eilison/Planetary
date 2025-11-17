@@ -18,6 +18,19 @@ class TerrainSerializer(serializers.ModelSerializer):
 
 
 class PlanetCreateSerializer(serializers.ModelSerializer):
+    climates = serializers.PrimaryKeyRelatedField(
+        queryset=Climate.objects.all(),
+        many=True,
+        allow_empty=True,
+        required=False,
+    )
+    terrains = serializers.PrimaryKeyRelatedField(
+        queryset=Terrain.objects.all(),
+        many=True,
+        allow_empty=True,
+        required=False,
+    )
+
     class Meta:
         model = Planet
         fields = ("name", "population", "climates", "terrains")
