@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "django_filters",
 ]
 
 LOCAL_APPS = ["st_planets.planets", "st_planets.core"]
