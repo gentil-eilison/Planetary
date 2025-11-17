@@ -7,5 +7,6 @@ app_name: str = "planets"
 router: routers.SimpleRouter = routers.SimpleRouter()
 router.register(r"climates", views.ClimateViewSet)
 router.register(r"terrains", views.TerrainViewSet)
+router.register(r"planets", views.PlanetViewSet)
 
 urlpatterns: list[URLResolver] = router.urls

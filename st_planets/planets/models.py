@@ -43,6 +43,12 @@ class Planet(TimeStampedModel):
         to=Terrain, related_name="planets", verbose_name=_("Terrains")
     )
 
+    def get_climates_names(self) -> list[str]:
+        return list(self.climates.values_list("name", flat=True))
+
+    def get_terrains_names(self) -> list[str]:
+        return list(self.terrains.values_list("name", flat=True))
+
     def __str__(self) -> str:
         return self.name
 
