@@ -16,8 +16,8 @@ class Climate(TimeStampedModel):
         return self.name
 
     class Meta:
-        verbose_name = _("Planet")
-        verbose_name_plural = _("Planets")
+        verbose_name = _("Climate")
+        verbose_name_plural = _("Climates")
 
 
 class Terrain(TimeStampedModel):
