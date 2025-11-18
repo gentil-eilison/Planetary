@@ -12,5 +12,6 @@ COPY . .
 
 # Local Dockerfile, so this is fine
 RUN chmod 777 ./compose/local/django/entrypoint.sh
+RUN chmod 777 ./compose/local/celery/entrypoint.sh
 
 ENTRYPOINT [ "./compose/local/django/entrypoint.sh" ]

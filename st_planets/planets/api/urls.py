@@ -1,4 +1,4 @@
-from django.urls import URLResolver
+from django.urls import URLPattern, URLResolver, path
 from rest_framework import routers
 
 from st_planets.planets.api import views
@@ -9,4 +9,11 @@ router.register(r"climates", views.ClimateViewSet)
 router.register(r"terrains", views.TerrainViewSet)
 router.register(r"planets", views.PlanetViewSet)
 
-urlpatterns: list[URLResolver] = router.urls
+urlpatterns: list[URLResolver | URLPattern] = [
+    path(
+        "refresh-planets-data/",
+        views.RefreshPlanetsDataView.as_view(),
+        name="refresh_planets_data",
+    ),
+]
+urlpatterns += router.urls
